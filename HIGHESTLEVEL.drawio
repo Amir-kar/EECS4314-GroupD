@@ -144,6 +144,9 @@
         <mxCell id="2m23eCFSQtleEWL6Jh_S-25" value="&lt;span style=&quot;font-size: 13px;&quot;&gt;Allocates resources for submitted jobs, ensures conatiners are used within the most ideal WorkerNodes in relation to data stored within HDFS.&amp;nbsp;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="750" y="520" width="210" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="2m23eCFSQtleEWL6Jh_S-26" value="" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="650" width="120" height="80" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
