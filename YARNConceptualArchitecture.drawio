@@ -5,7 +5,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="2d2gMoqNS-ZqPiem65WK-15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="20" y="520" width="630" height="490" as="geometry" />
+          <mxGeometry x="20" y="530" width="630" height="490" as="geometry" />
         </mxCell>
         <mxCell id="2d2gMoqNS-ZqPiem65WK-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Parts&lt;/h1&gt;&lt;div&gt;MasterNode&lt;/div&gt;&lt;div&gt;- Resource Manager&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Scheduler&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- allocates resources to the apps running&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- alternatives: Capacity Scheduler, FairScheduler&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;-&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- ApplicationsMaster&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- accepts jobs, negotiats the first container for the app specific AppMaster and provides service for restarting the AppMaster on container failure.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Slavenode&lt;/div&gt;&lt;div&gt;- Node Manager&lt;/div&gt;&lt;div&gt;- containers&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- abstract resource that incorporates memory, cpu, disk, think of a tiiny machine (docker)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- App masters&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Per Application!!!&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- has the responsibility of negotiating the appropriate resource containers from the scheduler, and tracking their status and progress&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;YARN support&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- resource reservation via ReservationSystem(component), allows user to specify a profile of resources over-time and temporal constraints.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Federation via YARN Fedaration. wire together sub-clusters and make them appear as one massive cluster. Used to achieve a very very large scale&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- YARN Shared Cache, provides ability to upload and manage shared application resources to HDFS in a safe and scalable manner&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="70" width="790" height="440" as="geometry" />
@@ -90,6 +90,12 @@
         </mxCell>
         <mxCell id="2d2gMoqNS-ZqPiem65WK-24" value="Yarn Core" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="310" y="900" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2d2gMoqNS-ZqPiem65WK-25" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.166;exitY=0.967;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2d2gMoqNS-ZqPiem65WK-3" target="2d2gMoqNS-ZqPiem65WK-24">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="660" as="sourcePoint" />
+            <mxPoint x="450" y="790" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
