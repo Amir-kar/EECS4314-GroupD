@@ -78,7 +78,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="vDSU7Jg6GCvEzzB5-tKR-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="vDSU7Jg6GCvEzzB5-tKR-2" value="Core utlities that support all other modules." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="540" y="160" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
