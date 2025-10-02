@@ -11,7 +11,7 @@
           <mxGeometry x="70" width="790" height="440" as="geometry" />
         </mxCell>
         <mxCell id="2d2gMoqNS-ZqPiem65WK-2" value="Resource Manager&lt;br&gt;has:&lt;br&gt;scheduler&lt;br&gt;&lt;br&gt;ApplicationsMaster" style="rounded=0;whiteSpace=wrap;html=1;convertToSvg=0;labelPosition=center;verticalLabelPosition=middle;align=left;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="50" y="530" width="320" height="190" as="geometry" />
+          <mxGeometry x="50" y="540" width="320" height="190" as="geometry" />
         </mxCell>
         <mxCell id="2d2gMoqNS-ZqPiem65WK-3" value="Application Master" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="480" y="550" width="120" height="60" as="geometry" />
@@ -96,6 +96,12 @@
             <mxPoint x="480" y="660" as="sourcePoint" />
             <mxPoint x="450" y="790" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="2d2gMoqNS-ZqPiem65WK-26" value="YARN Service registry" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2d2gMoqNS-ZqPiem65WK-27" value="YARN SERVICE API" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="810" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
