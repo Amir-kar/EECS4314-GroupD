@@ -4,53 +4,71 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2d2gMoqNS-ZqPiem65WK-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Parts&lt;/h1&gt;&lt;div&gt;MasterNode&lt;/div&gt;&lt;div&gt;- Resource Manager&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Scheduler&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- allocates resources to the apps running&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- alternatives: Capacity Scheduler, FairScheduler&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;-&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- ApplicationsMaster&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- accepts jobs, negotiats the first container for the app specific AppMaster and provides service for restarting the AppMaster on container failure.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Slavenode&lt;/div&gt;&lt;div&gt;- Node Manager&lt;/div&gt;&lt;div&gt;- containers&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- abstract resource that incorporates memory, cpu, disk, think of a tiiny machine (docker)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- App masters&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Per Application!!!&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- has the responsibility of negotiating the appropriate resource containers from the scheduler, and tracking their status and progress&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;YARN support&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- resource reservation via ReservationSystem(component), allows user to specify a profile of resources over-time and temporal constraints.&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Federation via YARN Fedaration. wire together sub-clusters and make them appear as one massive cluster. Used to achieve a very very large scale&lt;/div&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="70" y="50" width="790" height="440" as="geometry" />
+        <mxCell id="2d2gMoqNS-ZqPiem65WK-15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="520" width="480" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="2d2gMoqNS-ZqPiem65WK-1" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Parts&lt;/h1&gt;&lt;div&gt;MasterNode&lt;/div&gt;&lt;div&gt;- Resource Manager&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Scheduler&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- allocates resources to the apps running&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- alternatives: Capacity Scheduler, FairScheduler&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;-&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- ApplicationsMaster&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- accepts jobs, negotiats the first container for the app specific AppMaster and provides service for restarting the AppMaster on container failure.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Slavenode&lt;/div&gt;&lt;div&gt;- Node Manager&lt;/div&gt;&lt;div&gt;- containers&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- abstract resource that incorporates memory, cpu, disk, think of a tiiny machine (docker)&lt;br&gt;&lt;/div&gt;&lt;div&gt;- App masters&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Per Application!!!&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- has the responsibility of negotiating the appropriate resource containers from the scheduler, and tracking their status and progress&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;YARN support&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- resource reservation via ReservationSystem(component), allows user to specify a profile of resources over-time and temporal constraints.&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Federation via YARN Fedaration. wire together sub-clusters and make them appear as one massive cluster. Used to achieve a very very large scale&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- YARN Shared Cache, provides ability to upload and manage shared application resources to HDFS in a safe and scalable manner&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" width="790" height="440" as="geometry" />
         </mxCell>
         <mxCell id="2d2gMoqNS-ZqPiem65WK-2" value="Resource Manager&lt;div&gt;has:&lt;/div&gt;&lt;div&gt;scheduler&lt;/div&gt;&lt;div&gt;ApplicationsMaster&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="60" y="540" width="190" height="90" as="geometry" />
+          <mxGeometry x="210" y="550" width="190" height="90" as="geometry" />
         </mxCell>
         <mxCell id="2d2gMoqNS-ZqPiem65WK-3" value="Application Master" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="350" y="555" width="120" height="60" as="geometry" />
+          <mxGeometry x="470" y="565" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2d2gMoqNS-ZqPiem65WK-4" value="Container" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="610" y="555" width="120" height="60" as="geometry" />
+          <mxGeometry x="470" y="730" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2d2gMoqNS-ZqPiem65WK-5" value="Node Manager" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="350" y="690" width="120" height="60" as="geometry" />
+          <mxGeometry x="245" y="720" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="2d2gMoqNS-ZqPiem65WK-6" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="2d2gMoqNS-ZqPiem65WK-3" target="2d2gMoqNS-ZqPiem65WK-2">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="250" y="670" as="sourcePoint" />
-            <mxPoint x="300" y="620" as="targetPoint" />
+            <mxPoint x="270" y="1010" as="sourcePoint" />
+            <mxPoint x="320" y="960" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2d2gMoqNS-ZqPiem65WK-7" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="2d2gMoqNS-ZqPiem65WK-4" target="2d2gMoqNS-ZqPiem65WK-3">
+        <mxCell id="2d2gMoqNS-ZqPiem65WK-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="2d2gMoqNS-ZqPiem65WK-4" target="2d2gMoqNS-ZqPiem65WK-3">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="510" y="670" as="sourcePoint" />
-            <mxPoint x="560" y="620" as="targetPoint" />
+            <mxPoint x="530" y="1010" as="sourcePoint" />
+            <mxPoint x="530" y="630" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2d2gMoqNS-ZqPiem65WK-8" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="2d2gMoqNS-ZqPiem65WK-5" target="2d2gMoqNS-ZqPiem65WK-2">
+        <mxCell id="2d2gMoqNS-ZqPiem65WK-8" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="2d2gMoqNS-ZqPiem65WK-5" target="2d2gMoqNS-ZqPiem65WK-2">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="140" y="780" as="sourcePoint" />
-            <mxPoint x="190" y="730" as="targetPoint" />
+            <mxPoint x="160" y="1120" as="sourcePoint" />
+            <mxPoint x="210" y="1070" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="2d2gMoqNS-ZqPiem65WK-9" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="2d2gMoqNS-ZqPiem65WK-4" target="2d2gMoqNS-ZqPiem65WK-5">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="540" y="720" as="sourcePoint" />
-            <mxPoint x="590" y="670" as="targetPoint" />
+            <mxPoint x="560" y="1060" as="sourcePoint" />
+            <mxPoint x="610" y="1010" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="2d2gMoqNS-ZqPiem65WK-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2d2gMoqNS-ZqPiem65WK-3" target="2d2gMoqNS-ZqPiem65WK-5">
+        <mxCell id="2d2gMoqNS-ZqPiem65WK-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2d2gMoqNS-ZqPiem65WK-3" target="2d2gMoqNS-ZqPiem65WK-5">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="380" y="700" as="sourcePoint" />
-            <mxPoint x="430" y="650" as="targetPoint" />
+            <mxPoint x="400" y="1040" as="sourcePoint" />
+            <mxPoint x="450" y="990" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="2d2gMoqNS-ZqPiem65WK-11" value="Client" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="340" y="410" width="120" height="60" as="geometry" />
+          <mxGeometry x="170" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2d2gMoqNS-ZqPiem65WK-14" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="2d2gMoqNS-ZqPiem65WK-2" target="2d2gMoqNS-ZqPiem65WK-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="550" as="sourcePoint" />
+            <mxPoint x="450" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="2d2gMoqNS-ZqPiem65WK-17" value="Resource Reservation" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2d2gMoqNS-ZqPiem65WK-18" value="YARN Federation" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="2d2gMoqNS-ZqPiem65WK-19" value="YARN Shared Cache" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="640" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
