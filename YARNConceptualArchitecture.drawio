@@ -354,7 +354,7 @@
             <mxPoint x="31" y="-19" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="s7-J1qARUTeS9T5cuUp7-82" value="Scheduler" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="s7-J1qARUTeS9T5cuUp7-82" value="Scheduler" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
           <mxGeometry x="2765" y="710" width="70" height="30" as="geometry" />
         </mxCell>
         <mxCell id="s7-J1qARUTeS9T5cuUp7-83" value="ApplicationsManager" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
@@ -390,7 +390,7 @@
         <mxCell id="s7-J1qARUTeS9T5cuUp7-95" value="RM" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="2730" y="640" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="s7-J1qARUTeS9T5cuUp7-96" value="Some Store&lt;div&gt;HDFS&lt;/div&gt;&lt;div&gt;ZooKeeper&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="s7-J1qARUTeS9T5cuUp7-96" value="Some Store&lt;div&gt;HDFS&lt;/div&gt;&lt;div&gt;ZooKeeper&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
           <mxGeometry x="3225" y="593" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="s7-J1qARUTeS9T5cuUp7-98" value="&lt;font&gt;Web App Proxy&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
@@ -429,7 +429,7 @@
             <mxPoint x="3150" y="650" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="s7-J1qARUTeS9T5cuUp7-105" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;TimeLine Server&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="s7-J1qARUTeS9T5cuUp7-105" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;TimeLine Server&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
           <mxGeometry x="2730" y="931.25" width="140" height="48.75" as="geometry" />
         </mxCell>
         <mxCell id="s7-J1qARUTeS9T5cuUp7-106" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.177;entryY=0.981;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" source="s7-J1qARUTeS9T5cuUp7-57" target="s7-J1qARUTeS9T5cuUp7-55">
@@ -446,9 +446,6 @@
               <mxPoint x="2864" y="800" />
             </Array>
           </mxGeometry>
-        </mxCell>
-        <mxCell id="s7-J1qARUTeS9T5cuUp7-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.753;entryY=0.667;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="s7-J1qARUTeS9T5cuUp7-82" target="s7-J1qARUTeS9T5cuUp7-82">
-          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
