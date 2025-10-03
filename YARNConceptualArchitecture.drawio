@@ -357,7 +357,7 @@
         <mxCell id="s7-J1qARUTeS9T5cuUp7-82" value="Scheduler" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="2765" y="710" width="70" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="s7-J1qARUTeS9T5cuUp7-83" value="ApplicationsManager" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="s7-J1qARUTeS9T5cuUp7-83" value="ApplicationsManager" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
           <mxGeometry x="2742.5" y="665" width="115" height="30" as="geometry" />
         </mxCell>
         <mxCell id="s7-J1qARUTeS9T5cuUp7-86" value="AppMgr accepts app submissions. Sets up AppMaster&amp;nbsp; via scheduler. Tracks lifecycle&lt;div&gt;Scheduler allocates resources for apps. Assigns containers.&lt;/div&gt;" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
@@ -375,7 +375,7 @@
             <mxPoint x="2670" y="710" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="s7-J1qARUTeS9T5cuUp7-89" value="&lt;font&gt;State Store&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;" vertex="1" parent="1">
+        <mxCell id="s7-J1qARUTeS9T5cuUp7-89" value="&lt;font&gt;State Store&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
           <mxGeometry x="2890" y="665" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="s7-J1qARUTeS9T5cuUp7-90" value="RM saves the app metadata, credentials, tokens,&amp;nbsp; in a state-store" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
@@ -393,7 +393,7 @@
         <mxCell id="s7-J1qARUTeS9T5cuUp7-96" value="Some Store&lt;div&gt;HDFS&lt;/div&gt;&lt;div&gt;ZooKeeper&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="3225" y="593" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="s7-J1qARUTeS9T5cuUp7-98" value="&lt;font&gt;Web App Proxy&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;" vertex="1" parent="1">
+        <mxCell id="s7-J1qARUTeS9T5cuUp7-98" value="&lt;font&gt;Web App Proxy&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
           <mxGeometry x="2969" y="795" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="s7-J1qARUTeS9T5cuUp7-99" value="AM" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
@@ -446,6 +446,9 @@
               <mxPoint x="2864" y="800" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="s7-J1qARUTeS9T5cuUp7-109" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.753;entryY=0.667;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1" source="s7-J1qARUTeS9T5cuUp7-82" target="s7-J1qARUTeS9T5cuUp7-82">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
