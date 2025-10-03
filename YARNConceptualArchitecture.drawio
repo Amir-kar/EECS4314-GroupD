@@ -463,6 +463,9 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="s7-J1qARUTeS9T5cuUp7-114" value="AM provides a webUI, sends link to RM. Client interacts via this UI" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="2500" y="880" width="150" height="85" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
