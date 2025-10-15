@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Assignment 1: Conceptual Architecture Report - Group D</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <h1>Assignment 1: Conceptual Architecture Report</h1>
+        <div class="authors">Group D — Amir Karpov, Andrew Tissi, Andrew Vu, Dylan Smith, Mathew Vu</div>
+      </div>
+      <div class="meta">October 14, 2025</div>
+    </header>
+
+    <hr />
+
+    <nav class="toc">
+      <strong>Contents</strong>
+      <a href="#abstract">Abstract</a>
+      <a href="#introduction">Introduction</a>
+      <a href="#hadoop">Hadoop at first glance</a>
+      <a href="#architectural-styles">Architectural styles and Patterns</a>
+      <a href="#yarn-overview">Yarn Overview</a>
+      <a href="#workflow">High-Level YARN Workflow</a>
+      <a href="#deep-dive">Yarn Conceptual Architecture - Deep Dive</a>
+      <a href="#rm">Resource Manager</a>
+      <a href="#am">Applications Master</a>
+      <a href="#nm">Node Manager</a>
+      <a href="#container">Container</a>
+      <a href="#scheduler">Deep dive into the Scheduler</a>
+      <a href="#federation">Deep dive into YARN Federation</a>
+      <a href="#usecase">Yarn Use-Case: MapReduce Job on YARN</a>
+      <a href="#derivation">Derivation Process & Alternatives</a>
+      <a href="#lessons">Lessons learned</a>
+      <a href="#references">References</a>
+    </nav>
+
+    <section id="abstract">
+      <h2>Abstract</h2>
+      <p>This report provides a conceptual architecture and a deep dive analysis of YARN (Yet Another Resource Negotiator), the resource management and job scheduling framework of Hadoop.</p>
+      <p>The four main components of Hadoop are Hadoop Common (provides the shared utilities), MapReduce (Enables distributed and parallel processing), HDFS (fault tolerant distributed storage) and Yarn (managers cluster resources and schedules jobs). Their dependencies are structured in a way so that Hadoop Common provides the foundation of libraries and utilities that all other components rely on. The architectural styles within the system are: Layered, Master-Slave, Client-Server, Distributed Fault Tolerance, and Pipe & Filter. Yarn’s main goal is to decouple resource management from data processing which in turn allows for better cluster utilization and supports multiple processing engines. This report uses use cases and sequence diagrams to illustrate YARN’s workflows and interactions with other components, giving a better understanding of Hadoop’s architectural design and operating principles.</p>
+    </section>
+
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>Within this report we provide a conceptual architecture of Apache Hadoop with a deep dive into Yarn. Our goal was to focus on YARN’s conceptual architecture and dependencies while only using Hadoop’s official documentation and other reputable online sources.</p>
+      <p>The four main components of Apache Hadoop are The Common, HDFS, YARN, MapReduce. The four main components within YARN which were found throughout our research are: Resource Manager, Application Master, NodeManager, and Containers. We use close up diagrams to portray the components interactions and dependencies while using sequence diagrams to create a clear understanding of the systems workflow.</p>
+      <p><em>Note:</em> When reading this report please refer to legends found within images: arrows = depends on, dotted line = data / optional / UI.</p>
+    </section>
+
+    <section id="hadoop">
+      <h2>Hadoop at first glance</h2>
+      <p>Apache Hadoop is composed of four core components (layers) with clear dependencies found within Apache’s public documentation:</p>
+      <ul>
+        <li><strong>MapReduce:</strong> Hadoop’s batch processing engine at the application layer; depends on lower layers.</li>
+        <li><strong>YARN:</strong> Resource allocator and job scheduler at the resource management layer.</li>
+        <li><strong>HDFS:</strong> Distributed file storage at the storage layer.</li>
+        <li><strong>Hadoop Common:</strong> Core libraries and utilities at the foundation layer.</li>
+      </ul>
+      <div class="image-placeholder">[Diagram: Hadoop layers — replace this placeholder with your SVG/PNG]</div>
+      <h3>Interactions</h3>
+      <p>The Common &lt;-&gt; HDFS, YARN, MapReduce: Common provides libraries that HDFS, YARN and MapReduce use. HDFS &lt;-&gt; YARN: YARN stores job-related data in HDFS. HDFS &lt;-&gt; MapReduce: MapReduce reads and writes data to HDFS and relies on data locality. YARN &lt;-&gt; MapReduce: YARN manages containers for MapReduce tasks.</p>
+    </section>
+
+    <section id="architectural-styles">
+      <h2>Architectural styles and Patterns</h2>
+
+      <table>
+        <thead>
+          <tr><th>Architectural styles</th><th>Description</th><th>Hadoop examples</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Layered</td><td>System is organized in layers, each providing services to the layer above and using services from the layer below</td><td>Top: Application layer (MapReduce, Spark), Resource management layer (YARN), Storage layer (HDFS), Bottom: Common</td></tr>
+          <tr><td>Master Slave</td><td>One master coordinates multiple slaves that perform the actual work</td><td>YARN RM &amp; AM, HDFS NameNode & DataNodes</td></tr>
+          <tr><td>Client Server</td><td>Client sends a request to server, which processes and returns a response to client</td><td>Clients submit jobs to RM</td></tr>
+          <tr><td>Distributed</td><td>Components are spread across multiple nodes improving scalability and fault tolerance</td><td>HDFS stores blocks on many DataNodes; YARN schedules across NodeManagers</td></tr>
+          <tr><td>Pipe &amp; Filter</td><td>Data flows through a sequence of processing steps connected by pipes</td><td>Map -> Shuffle -> Sort -> Reduce</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="yarn-overview">
+      <h2>Yarn Overview</h2>
+      <p>YARN is responsible for resource management and job scheduling in Hadoop. Key components:</p>
+      <ul>
+        <li><strong>Resource Manager (RM):</strong> Global master daemon that allocates resources and schedules jobs.</li>
+        <li><strong>Application Master (AM):</strong> One per application; manages application lifecycle and requests containers.</li>
+        <li><strong>Node Manager (NM):</strong> One per node; launches and monitors containers.</li>
+        <li><strong>Container:</strong> Resource bundle (CPU, memory) where tasks run.</li>
+      </ul>
+      <div class="image-placeholder">[Diagram: YARN component overview]</div>
+    </section>
+
+    <section id="workflow">
+      <h2>High-Level YARN Workflow</h2>
+      <div class="image-placeholder">[Sequence diagram: client &rarr; RM &rarr; AM &rarr; NM]</div>
+      <ol>
+        <li>Client submits a job to Resource Manager.</li>
+        <li>Resource Manager allocates a container for the Application Master.</li>
+        <li>Node Manager launches the Application Master container and reports status to RM.</li>
+        <li>Application Master registers with RM and requests containers for tasks.</li>
+        <li>Application Master instructs Node Managers to start tasks in containers.</li>
+        <li>Node Managers update RM with heartbeats and container statuses.</li>
+      </ol>
+    </section>
+
+    <section id="deep-dive">
+      <h2>Yarn Conceptual Architecture - Deep Dive</h2>
+      <p>Below we expand on the main components and their responsibilities.</p>
+    </section>
+
+    <section id="rm">
+      <h2>Resource Manager</h2>
+      <p>The Resource Manager (RM) is YARN's global orchestrator. It runs two main subsystems: the ApplicationManager and the Scheduler. RM is the ultimate authority for allocating cluster resources; it also includes a State Store for persistence and a Web Application Proxy for safe UI access.</p>
+      <ul>
+        <li><strong>ApplicationManager:</strong> Accepts applications, negotiates the initial AM container, and restarts AM containers if needed.</li>
+        <li><strong>Scheduler:</strong> Allocates containers to applications based on policies and resource availability.</li>
+        <li><strong>State Store:</strong> Persists application and cluster metadata to allow RM recovery.</li>
+        <li><strong>Web Application Proxy:</strong> Provides a safe way for clients to access per-application UIs.</li>
+      </ul>
+      <div class="image-placeholder">[Diagram: RM internal components]</div>
+    </section>
+
+    <section id="am">
+      <h2>Applications Master</h2>
+      <p>The Application Master is launched per-application and coordinates resource requests and container lifecycle for that application. It communicates asynchronously with both RM (AMRMClientAsync) and NodeManagers (AMNMClientAsync), and often exposes a per-application WebUI that is proxied through RM.</p>
+      <div class="image-placeholder">[Diagram: AM interactions]</div>
+    </section>
+
+    <section id="nm">
+      <h2>Node Manager</h2>
+      <p>The NodeManager is the per-node agent that launches containers and reports node/container health to RM via heartbeats. It does not make allocation decisions; it simply executes start/stop and enforces resource limits for containers.</p>
+      <div class="image-placeholder">[Diagram: NM lifecycle & heartbeats]</div>
+    </section>
+
+    <section id="container">
+      <h2>Container</h2>
+      <p>A Container is a resource bundle that runs a task (CPU, memory, network). Containers are created and destroyed as applications progress; the NM is responsible for container lifecycle while the AM manages what runs inside them.</p>
+    </section>
+
+    <section id="scheduler">
+      <h2>Deep dive into the Scheduler</h2>
+      <p>YARN supports pluggable schedulers. Common examples include Capacity Scheduler, Fair Scheduler, and FIFO. Each scheduler implements allocation policies and queueing to ensure resource fairness, tenant isolation, or throughput optimization.</p>
+      <div class="image-placeholder">[Diagram: Scheduler types]</div>
+    </section>
+
+    <section id="federation">
+      <h2>Deep dive into YARN Federation</h2>
+      <p>YARN Federation (introduced in Hadoop 3.0) splits a large cluster into multiple sub-clusters. Each sub-cluster has its own ResourceManager and nodes. A Router and StateStore coordinate requests across sub-clusters to improve scalability and locality.</p>
+      <ul>
+        <li><strong>Router:</strong> Client entry point that selects a home sub-cluster for applications.</li>
+        <li><strong>StateStore:</strong> Tracks sub-cluster metadata and load-balancing policies.</li>
+        <li><strong>AMRMProxy:</strong> Forwards AM requests to multiple ResourceManagers through an interceptor chain.</li>
+      </ul>
+    </section>
+
+    <section id="usecase">
+      <h2>Yarn Use-Case: MapReduce Job on YARN</h2>
+      <p>If space allows, include sequence diagrams showing client &rarr; RM &rarr; AM &rarr; NM and lifecycle of Map and Reduce tasks inside containers.</p>
+    </section>
+
+    <section id="derivation">
+      <h2>Derivation Process &amp; Alternatives</h2>
+      <p>We gathered information from Hadoop official documentation, GeekforGeeks, and DataCamp. Alternatives considered included Google BigQuery (Borg) and Snowflake.</p>
+    </section>
+
+    <section id="lessons">
+      <h2>Lessons learned</h2>
+      <p>YARN and Hadoop combine multiple architectural styles to achieve robustness, scalability, and fault tolerance. Single masters (NameNode, ResourceManager) are potential bottlenecks but can be mitigated using standby masters or federation.</p>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
+      <ol class="references">
+        <li><a href="https://hadoop.apache.org/" target="_blank" rel="noopener">https://hadoop.apache.org/</a></li>
+        <li><a href="https://www.geeksforgeeks.org/data-engineering/hadoop-daemons-and-their-features/" target="_blank" rel="noopener">GeeksforGeeks: Hadoop daemons and their features</a></li>
+        <li><a href="https://hadoop.apache.org/docs/r3.3.1/hadoop-yarn/hadoop-yarn-site/WebApplicationProxy.html" target="_blank" rel="noopener">Hadoop WebApplicationProxy docs</a></li>
+        <li><a href="https://www.datacamp.com/blog/hadoop-architecture" target="_blank" rel="noopener">DataCamp: Hadoop architecture</a></li>
+        <li><a href="https://www.geeksforgeeks.org/data-engineering/hadoop-architecture/" target="_blank" rel="noopener">GeeksforGeeks: Hadoop architecture</a></li>
+        <li><a href="https://www.geeksforgeeks.org/big-data/hadoop-yarn-architecture/" target="_blank" rel="noopener">GeeksforGeeks: YARN architecture</a></li>
+      </ol>
+    </section>
+
+    <footer>
+      <div>Group D — Assignment 1. Generated on October 14, 2025.</div>
+      <div class="edit-hint" style="margin-top:6px;color:var(--muted)">Tip: Replace <code>[Diagram: ...]</code> placeholders with your SVG/PNG diagrams (use inline SVG for best quality). To print/export to PDF: use your browser's Print &rarr; Save as PDF.</div>
+    </footer>
+  </div>
+</body>
+</html>
