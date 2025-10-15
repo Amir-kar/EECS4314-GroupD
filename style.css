@@ -1,0 +1,147 @@
+:root {
+    --maxw: 900px;
+    --accent: #0b5cff;
+    --muted: #666
+}
+
+html,
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background: #f6f8fb;
+    color: #111
+}
+
+.page {
+    max-width: var(--maxw);
+    background: #fff;
+    padding: 36px;
+    margin: 40px 16px 80px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(12, 20, 40, 0.08);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between
+}
+
+header h1 {
+    font-size: 1.6rem;
+    margin: 0
+}
+
+header .meta {
+    font-size: 0.9rem;
+    color: var(--muted)
+}
+
+.authors {
+    margin-top: 8px;
+    color: var(--muted)
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 22px 0
+}
+
+.toc {
+    background: #f3f7ff;
+    padding: 14px;
+    border-radius: 8px;
+    margin: 8px 0
+}
+
+.toc a {
+    display: block;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 6px 0
+}
+
+section {
+    margin: 20px 0
+}
+
+h2 {
+    color: #0a2540;
+    margin: 8px 0
+}
+
+h3 {
+    color: #0a2540;
+    margin: 6px 0
+}
+
+p {
+    line-height: 1.5;
+    color: #222
+}
+
+.image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    border-radius: 6px;
+    background: linear-gradient(180deg, #eef4ff, #ffffff);
+    color: var(--muted);
+    border: 1px dashed #d8e2ff;
+    margin: 10px 0
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+table thead th {
+    background: #f1f6ff;
+    padding: 8px;
+    text-align: left
+}
+
+table td,
+table th {
+    padding: 8px;
+    border: 1px solid #eee
+}
+
+footer {
+    margin-top: 32px;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+    color: var(--muted);
+    font-size: 0.9rem
+}
+
+.references a {
+    color: var(--accent);
+    text-decoration: none
+}
+
+@media print {
+    body {
+        background: white
+    }
+
+    .page {
+        box-shadow: none;
+        margin: 0;
+        border-radius: 0
+    }
+
+    nav,
+    .edit-hint {
+        display: none
+    }
+}
