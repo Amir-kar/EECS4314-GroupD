@@ -44,14 +44,18 @@
 
     <section id="abstract">
       <h2>Abstract</h2>
-      <p>This report provides a conceptual architecture and a deep dive analysis of YARN (Yet Another Resource Negotiator), the resource management and job scheduling framework of Hadoop.</p>
-      <p>The four main components of Hadoop are Hadoop Common (provides the shared utilities), MapReduce (Enables distributed and parallel processing), HDFS (fault tolerant distributed storage) and Yarn (managers cluster resources and schedules jobs). Their dependencies are structured in a way so that Hadoop Common provides the foundation of libraries and utilities that all other components rely on. The architectural styles within the system are: Layered, Master-Slave, Client-Server, Distributed Fault Tolerance, and Pipe & Filter. Yarn’s main goal is to decouple resource management from data processing which in turn allows for better cluster utilization and supports multiple processing engines. This report uses use cases and sequence diagrams to illustrate YARN’s workflows and interactions with other components, giving a better understanding of Hadoop’s architectural design and operating principles.</p>
+    <p>This report provides a conceptual architecture and a deep dive analysis of YARN (Yet Another Resource Negotiator), the resource management and job scheduling framework of Hadoop.</p>
+    <p>The four main components of Hadoop are Hadoop Common (provides the shared utilities), MapReduce (Enables distributed and parallel processing), HDFS (fault tolerant distributed storage) and Yarn (managers cluster resources and schedules jobs). Their dependencies are structured in a way so that Hadoop Common provides the foundation of libraries and utilities that all other components rely on. The architectural styles within the system are: Layered, Master-Slave, Client-Server, Distributed Fault Tolerance, and Pipe & Filter. Yarn’s main goal is to decouple resource management from data processing which in turn allows for better cluster utilization and supports multiple processing engines. This report uses use cases and sequence diagrams to illustrate YARN’s workflows and interactions with other components, giving a better understanding of Hadoop’s architectural design and operating principles.</p>
     </section>
 
     <section id="introduction">
       <h2>Introduction</h2>
       <p>Within this report we provide a conceptual architecture of Apache Hadoop with a deep dive into Yarn. Our goal was to focus on YARN’s conceptual architecture and dependencies while only using Hadoop’s official documentation and other reputable online sources.</p>
-      <p>The four main components of Apache Hadoop are The Common, HDFS, YARN, MapReduce. The four main components within YARN which were found throughout our research are: Resource Manager, Application Master, NodeManager, and Containers. We use close up diagrams to portray the components interactions and dependencies while using sequence diagrams to create a clear understanding of the systems workflow.</p>
+      <ul>
+        <li>The four main components of Apache Hadoop are The Common, HDFS, YARN, MapReduce [1].</li>
+        <li>The four main components within YARN which were found throughout our research are: Resource Manager, Application Master, NodeManager, and Containers [4][8].</li>
+        <li>We use close up diagrams to portray the components interactions and dependencies while using sequence diagrams to create a clear understanding of the systems workflow.</li>
+      </ul>
       <p><em>Note:</em> When reading this report please refer to legends found within images: arrows = depends on, dotted line = data / optional / UI.</p>
     </section>
 
@@ -59,14 +63,26 @@
       <h2>Hadoop at first glance</h2>
       <p>Apache Hadoop is composed of four core components (layers) with clear dependencies found within Apache’s public documentation:</p>
       <ul>
-        <li><strong>MapReduce:</strong> Hadoop’s batch processing engine at the application layer; depends on lower layers.</li>
-        <li><strong>YARN:</strong> Resource allocator and job scheduler at the resource management layer.</li>
-        <li><strong>HDFS:</strong> Distributed file storage at the storage layer.</li>
-        <li><strong>Hadoop Common:</strong> Core libraries and utilities at the foundation layer.</li>
+        <li><strong>MapReduce:</strong> This is Hadoop’s batch processor engine, performs distributed computation on the data stored in HDFS [9]. MapReduce is at the top layer (application layer) and it depends on all 3 lower layers.</li>
+        <li><strong>YARN(Yet ANother Resource Negotiator):</strong> This is Hadoop’s resource allocator and jobs scheduler. It manages and schedules resources for running applications [8]. YARN is at the 2nd layer (resource management layer) and it depends on the 2 lower layers.</li>
+        <li><strong>HDFS(Hadoop’s Distributed File Storage):</strong> This is Hadoop’s file storage system [10]. It breaks large data into blocks and stores as well as replicates the blocks across multiple nodes. HDFS is at the 3rd layer (storage layer) and it depends only on the bottom layer.</li>
+        <li><strong>Hadoop Common:</strong> This is Hadoop common core that provides libraries, services and utilities to support the upper layer Hadoop modules [4]. The Common is at the bottom layer (foundation layer).</li>
       </ul>
-      <div class="image-placeholder">[Diagram: Hadoop layers — replace this placeholder with your SVG/PNG]</div>
+      <div class="image-placeholder"><img src="HadoopConceptualArchitecture.png" alt="Hadoop Conceptual Architecture"></div>
       <h3>Interactions</h3>
-      <p>The Common &lt;-&gt; HDFS, YARN, MapReduce: Common provides libraries that HDFS, YARN and MapReduce use. HDFS &lt;-&gt; YARN: YARN stores job-related data in HDFS. HDFS &lt;-&gt; MapReduce: MapReduce reads and writes data to HDFS and relies on data locality. YARN &lt;-&gt; MapReduce: YARN manages containers for MapReduce tasks.</p>
+      <ul>
+        <li>The Common <-> HDFS, YARN, MapReduce: Common provides libraries, services, utilities that HDFS, YARN and MapReduce import and use.</li>
+        <li>HDFS <-> YARN: YARN stores job-related data such as application JARS, logs and outputs in HDFS. YARN also retrieves application data and configurations from HDFS when launching jobs.</li>
+        <li>HDFS <-> MapReduce: MapReduce reads input from HDFS blocks and writes output back to HDFS. HDFS provides data locality information so MapReduce tasks can be executed near the data blocks.</li>
+        <li>YARN <-> MapReduce: YARN manages the containers for MapReduce tasks to run on.</li>
+      </ul>
+      <h3>Dependencies</h3>
+      <ul>
+        <li>HDFS, YARN and MapReduce depend on Common for core libraries, services and utilities [1]</li>
+        <li>YARN depends on HDFS for storing and retrieving application data and configurations (JARs, logs, etc.) [11]</li>
+        <li>MapReduce depends on HDFS for accessing input and output data blocks [11]</li>
+        <li>MapReduce depends on YARN for resource management and tasks scheduling</li>
+      </ul>
     </section>
 
     <section id="architectural-styles">
@@ -77,11 +93,25 @@
           <tr><th>Architectural styles</th><th>Description</th><th>Hadoop examples</th></tr>
         </thead>
         <tbody>
-          <tr><td>Layered</td><td>System is organized in layers, each providing services to the layer above and using services from the layer below</td><td>Top: Application layer (MapReduce, Spark), Resource management layer (YARN), Storage layer (HDFS), Bottom: Common</td></tr>
-          <tr><td>Master Slave</td><td>One master coordinates multiple slaves that perform the actual work</td><td>YARN RM &amp; AM, HDFS NameNode & DataNodes</td></tr>
-          <tr><td>Client Server</td><td>Client sends a request to server, which processes and returns a response to client</td><td>Clients submit jobs to RM</td></tr>
-          <tr><td>Distributed</td><td>Components are spread across multiple nodes improving scalability and fault tolerance</td><td>HDFS stores blocks on many DataNodes; YARN schedules across NodeManagers</td></tr>
-          <tr><td>Pipe &amp; Filter</td><td>Data flows through a sequence of processing steps connected by pipes</td><td>Map -> Shuffle -> Sort -> Reduce</td></tr>
+          <tr><td>Layered</td><td>System is organized in layers, each providing services to the layer above and using services from the layer below</td><td>Hadoop has 4 layers: 
+          <ol>
+            <li>Top: Application layer (MapReduce, Spark, Tez, …)</li>
+            <li>Resource management layer (YARN handles resource allocation and jobs scheduling)</li>
+            <li>Storage layer (HDFS handles distributed storage of files)</li>
+            <li>Bottom: Core layer (Common provides utilities, libraries, etc. to upper layers)</li>
+          </ol>
+            
+          </td></tr>
+          <tr><td>Master Slave</td><td>One master coordinates multiple slaves that perform the actual work</td><td>
+          <ol>
+            <li>MapReduce: JobTracker (runs on master node) schedules and monitors jobs and TaskTrackers (run on slave nodes) work the tasks</li>
+            <li>YARN: Resource Manager is the cluster master and Application Master is application master, giving instructions to NodeManagers (slaves) to work with containers</li>
+            <li>HDFS: NameNode is the master, secondary Namenode is the master helper and DataNodes are slaves</li>
+          </ol>  
+          </td></tr>
+          <tr><td>Client Server</td><td>Client sends a request to server, which processes and returns a response to client</td><td>Client sends a request (job submission) to Hadoop Server, Hadoop coordinates the work and sends back a response to client</td></tr>
+          <tr><td>Distributed</td><td>Components are spread across multiple physical/virtual nodes that work together as a single system. This improves scalability and fault tolerance</td><td>Hadoop consists of multiple nodes where it can store data (HDFS stores file blocks on many DataNodes) and runs computations (YARN schedule tasks across NodeManagers)</td></tr>
+          <tr><td>Pipe &amp; Filter</td><td>Data flows through a sequence of processing steps connected by pipes</td><td>MapReduce has Map and Reduce filters and Shuffle and Sort pipes: Data input -> Map Filter -> Shuffle Pipe -> Sort Pipe -> Reduce Filter -> Output</td></tr>
         </tbody>
       </table>
     </section>
