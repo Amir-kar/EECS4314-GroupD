@@ -99,6 +99,16 @@ p {
     margin: 10px 0
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(12, 20, 40, 0.08);
+}
+
+
 table {
     width: 100%;
     border-collapse: collapse
