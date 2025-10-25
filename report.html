@@ -200,30 +200,51 @@
 
     <section id="nm">
       <h2>Node Manager</h2>
-      <p>The NodeManager is the per-node agent that launches containers and reports node/container health to RM via heartbeats. It does not make allocation decisions; it simply executes start/stop and enforces resource limits for containers.</p>
-      <div class="image-placeholder">[Diagram: NM lifecycle & heartbeats]</div>
+      <p>The NodeManager is the per-node daemon.  The NM launches and monitors containers within its machine at the AM’s request.  The AM passes along details about allocations the RM had previously confirmed, and the NM executes start/stop instructions to its containers.
+      </p>
+      <br>
+      <p>	The NM does not allocate resources, nor does it orchestrate any real tasks.
+      </p>
+      <br>
+      <p>The Heartbeat service within the NM sends the RM status updates about the NM. This service runs on NM startup and periodically when the NM is online.  Without the heartbeat service, there would be no method to keep track of whether an NM should be included within the cluster.  These heartbeat messages also give the RM a chance to tell the NM whether or not to clean up containers and to free up resources.
+      </p>
+      <div class="image-placeholder"><img src = "NM.png" alt="NodeManager"></div>
     </section>
 
     <section id="container">
       <h2>Container</h2>
-      <p>A Container is a resource bundle that runs a task (CPU, memory, network). Containers are created and destroyed as applications progress; the NM is responsible for container lifecycle while the AM manages what runs inside them.</p>
+      <p>A Container is a resource bundle where a task runs. A resource bundle includes everything a task may need (CPU, Memory, Network) to run to completion. A common example we can use to create an image is a ‘docker’.</p>  
+      <br>
+      <p>	Containers are hosted within nodes, and there are typically multiple containers per node. 
+      </p>
+      <br>
+      <p>Containers come into the equation as early as the AM is allocated a container by the RM. From here, Containers are constantly being spun up and down via the control of its NM; which is at the mercy of its AM.</p>
+      <br>
+      <p>The Container only hosts the task and has no control over the task. Docker is an example of a resource bundle but a Container can use many other resource bundles.</p>
+      <div class="image-placeholder"><img src = "Container.png" alt="Container"></div>
     </section>
 
     <section id="scheduler">
       <h2>Deep dive into the Scheduler</h2>
-      <p>YARN supports pluggable schedulers. Common examples include Capacity Scheduler, Fair Scheduler, and FIFO. Each scheduler implements allocation policies and queueing to ensure resource fairness, tenant isolation, or throughput optimization.</p>
-      <div class="image-placeholder">[Diagram: Scheduler types]</div>
+      <div class="image-placeholder"><img src="Scheduler.png" alt="Scheduler"></div>
+      <p>The Scheduler is a scheduler, it is responsible for the allocation of resources to various running applications, it is a pure scheduler in that it does not monitor or track the status of the running applications [8]. The Scheduler is designed for better utilization of resources and performance enhancements [12] to maximise these values scheduler has a pluggable policy, this is responsible for partitioning the cluster resources among various queues and applications [8]. The current pluggable schedulers that Hadoop offers are FIFO, Capacity, and Fair schedulers [8].</p>
     </section>
 
     <section id="federation">
       <h2>Deep dive into YARN Federation</h2>
-      <p>YARN Federation (introduced in Hadoop 3.0) splits a large cluster into multiple sub-clusters. Each sub-cluster has its own ResourceManager and nodes. A Router and StateStore coordinate requests across sub-clusters to improve scalability and locality.</p>
-      <ul>
-        <li><strong>Router:</strong> Client entry point that selects a home sub-cluster for applications.</li>
-        <li><strong>StateStore:</strong> Tracks sub-cluster metadata and load-balancing policies.</li>
-        <li><strong>AMRMProxy:</strong> Forwards AM requests to multiple ResourceManagers through an interceptor chain.</li>
-      </ul>
+      <p>YARN Federation is an optional advanced feature built on top of YARN. It was introduced in Hadoop 3.0 to solve very large-scale cluster challenges. Attempting to scale a traditional YARN architecture with a single ResourceManager can run into bottlenecks. As the cluster size grows all resource management and scheduling responsibilities fall on one master node. YARN Federation solves this issue by splitting the system into multiple sub-clusters. Each of these subclusters gets its own ResourceManager and compute nodes. This means there will be many MasterNodes, one for each subcluster. This allows applications to schedule jobs and tasks across all nodes, while each subcluster automatically handles its own local scheduling.</p>
+      <br>
+      <p>With this design, applications can schedule jobs and tasks across all the nodes in the federated cluster, while each subcluster manages its own local scheduling independently. This architecture is much better for scalability as it enables linear growth: adding more sub-clusters will increase the overall cluster capacity without overloading any ResourceManagers.</p>
+      <br>
+      <p>YARN Federation improves efficiency as most jobs stay local, and it ensures fairness and load balancing because whenever a ResourceManager in a given subcluster gets overwhelmed, other ResourceManagers can take over some work and prevent any master node from becoming a bottleneck.</p>
+      <div class="image-placeholder"><img src="YarnFederation.png" alt="Yarn Federation"></div>
+      <p>At the core of YARN Federation is a StateStore, a local database that keeps track of all subclusters and load-balancing policies. It is used by both Routers and ResourceManagers to coordinate across subclusters. </p>
+      <br>
+      <p>Clients interact with the federated YARN through a central Router, which serves as the client’s entry point. When a client submits an application, the Router queries the StateSore to check which subcluster should be handling the request. The Router then forwards the request to the ResourceManager of the correct subcluster. That subcluster that starts the job and is called Home Subcluster. Other subclusters that participate in the application’s execution are called Secondary Subclusters. </p>
+      <br>
+      <p>To facilitate communication between the ApplicationMaster and multiple ResourceManagers across the many subclusters, YARN Federation employs the AMRMProxy. This proxy sits on top of each node and forwards ApplicationMaster’s resource requests to multiple ResourceManagers. The proxy does this by using an interceptor chain pattern - resembling a pipe-and-filter architecture. This allows the requests to be processed through a series of interceptors before reaching their respective ResourceManagers</p>
     </section>
+    
 
     <section id="usecase">
       <h2>Yarn Use-Case: MapReduce Job on YARN</h2>
