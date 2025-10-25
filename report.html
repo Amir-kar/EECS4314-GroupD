@@ -180,7 +180,7 @@
     <section id="rm">
       <h2>Resource Manager</h2>
       <p>In Hadoop there exist multiple background Java processes called daemons, they run constantly to manage storage, resource allocation and task coordination across the distributed system, and use the master and slave architecture. The Resource Manager (RM) is a global master daemon, it is the ultimate authority that arbitrates resources, it has two major components: ApplicationsManager and Scheduler, and two minor components: the state store, and Web App Proxy [2]. The ApplicationManager is responsible for accepting job requests from the client(s), negotiating with the first container for executing the application specific ApplicationMaster, requests the allocation of resources from the scheduler, and provides the service for restarting the ApplicationManager container. </p>
-      <>
+      
       <p>The scheduler allocates resources to the various running applications based on the resource requirement of the application. This is also based on the resource Container that has elements such as memory, cpu, disk, network etc. The State Store is a pluggable storage that will save application metadata and also the completion state of the application, since ResourceManager is YARN’s orchestrator it is potentially a single point of failure and State Store is there to store information while ResourceManager restarts. The Web Application Proxy is a proxy intended to reduce web based malicious attacks through YARN, ApplicationMaster has the responsibility to provide a web UI and to send that link to ResourceManager, the proxy will warn users of potentially malicious links and avoid risk [3].
       </p>
       
@@ -190,9 +190,9 @@
     <section id="am">
       <h2>Applications Master</h2>
       <p>The ApplicationMaster(AM) is the per-application daemon launched by the RM within its own container.  The AM acts as the application’s orchestrator by requesting for resource allocations from the RM and by instructing the NodeManagers to start/stop containers.</p>
-      <>
+      
       <p>Within the AM there are two protocols which are used for communication. The AMRMClientAsync is used to communicate with the RM when submitting requests for resource allocations and status updates about the AMs app. The AMNMClientAsync is used to communicate with the NMs when sending start/stop and other container requests.  Note that both of the protocols used by the AM contain async within their names, this means that both the RM and NMs send callback messages to the AM.</p>
-      <>
+      
       <p>Many AMs also expose a WebUI per-application. This WebUI is tunneled to the RM, and clients are then able to view per-app status’, metrics, and configs when accessing the RM’s WebUI Proxy.</p>
       <div class="image-placeholder"><img src="AM.png" alt="ApplicationMaster"></div>
       
@@ -202,10 +202,10 @@
       <h2>Node Manager</h2>
       <p>The NodeManager is the per-node daemon.  The NM launches and monitors containers within its machine at the AM’s request.  The AM passes along details about allocations the RM had previously confirmed, and the NM executes start/stop instructions to its containers.
       </p>
-      <>
+      
       <p>	The NM does not allocate resources, nor does it orchestrate any real tasks.
       </p>
-      <>
+      
       <p>The Heartbeat service within the NM sends the RM status updates about the NM. This service runs on NM startup and periodically when the NM is online.  Without the heartbeat service, there would be no method to keep track of whether an NM should be included within the cluster.  These heartbeat messages also give the RM a chance to tell the NM whether or not to clean up containers and to free up resources.
       </p>
       <div class="image-placeholder"><img src = "NM.png" alt="NodeManager"></div>
@@ -214,12 +214,12 @@
     <section id="container">
       <h2>Container</h2>
       <p>A Container is a resource bundle where a task runs. A resource bundle includes everything a task may need (CPU, Memory, Network) to run to completion. A common example we can use to create an image is a ‘docker’.</p>  
-      <>
+      
       <p>	Containers are hosted within nodes, and there are typically multiple containers per node. 
       </p>
-      <>
+      
       <p>Containers come into the equation as early as the AM is allocated a container by the RM. From here, Containers are constantly being spun up and down via the control of its NM; which is at the mercy of its AM.</p>
-      <>
+      
       <p>The Container only hosts the task and has no control over the task. Docker is an example of a resource bundle but a Container can use many other resource bundles.</p>
       <div class="image-placeholder"><img src = "Container.png" alt="Container"></div>
     </section>
@@ -233,15 +233,15 @@
     <section id="federation">
       <h2>Deep dive into YARN Federation</h2>
       <p>YARN Federation is an optional advanced feature built on top of YARN. It was introduced in Hadoop 3.0 to solve very large-scale cluster challenges. Attempting to scale a traditional YARN architecture with a single ResourceManager can run into bottlenecks. As the cluster size grows all resource management and scheduling responsibilities fall on one master node. YARN Federation solves this issue by splitting the system into multiple sub-clusters. Each of these subclusters gets its own ResourceManager and compute nodes. This means there will be many MasterNodes, one for each subcluster. This allows applications to schedule jobs and tasks across all nodes, while each subcluster automatically handles its own local scheduling.</p>
-      <>
+      
       <p>With this design, applications can schedule jobs and tasks across all the nodes in the federated cluster, while each subcluster manages its own local scheduling independently. This architecture is much better for scalability as it enables linear growth: adding more sub-clusters will increase the overall cluster capacity without overloading any ResourceManagers.</p>
-      <>
+      
       <p>YARN Federation improves efficiency as most jobs stay local, and it ensures fairness and load balancing because whenever a ResourceManager in a given subcluster gets overwhelmed, other ResourceManagers can take over some work and prevent any master node from becoming a bottleneck.</p>
       <div class="image-placeholder"><img src="YarnFederation.png" alt="Yarn Federation"></div>
       <p>At the core of YARN Federation is a StateStore, a local database that keeps track of all subclusters and load-balancing policies. It is used by both Routers and ResourceManagers to coordinate across subclusters. </p>
-      <>
+      
       <p>Clients interact with the federated YARN through a central Router, which serves as the client’s entry point. When a client submits an application, the Router queries the StateSore to check which subcluster should be handling the request. The Router then forwards the request to the ResourceManager of the correct subcluster. That subcluster that starts the job and is called Home Subcluster. Other subclusters that participate in the application’s execution are called Secondary Subclusters. </p>
-      <>
+      
       <p>To facilitate communication between the ApplicationMaster and multiple ResourceManagers across the many subclusters, YARN Federation employs the AMRMProxy. This proxy sits on top of each node and forwards ApplicationMaster’s resource requests to multiple ResourceManagers. The proxy does this by using an interceptor chain pattern - resembling a pipe-and-filter architecture. This allows the requests to be processed through a series of interceptors before reaching their respective ResourceManagers</p>
     </section>
     
@@ -252,10 +252,10 @@
       <h2>Derivation Process &amp; Alternatives</h2>
       <p>Our approach involved gathering information from multiple sources, including Hadoop official documentation and online resources such as GeekforGeeks and DataCamp.
       </p>
-      <>
+      
       <p>Using this information, we delivered a high level conceptual architecture diagram of Hadoop, providing a clear overview of its layers and core components. We also conduct an in-depth exploration of YARN, highlighting dependencies between its components through its conceptual architecture diagram. We also delivered a sequence diagram to show the flows between components interactions in YARN.
       </p>
-      <>
+      
       <p>An alternative is Google BigQuery with Borg (resource and job manager). Hadoop and BigQuery have different purposes (Hadoop is a framework for distributed storage and processing of large datasets while Google BigQuery is a serverless managed data warehouse). However, if one’s goal is fast, scalable, SQL-based analytics on large structured data, without managing infrastructure, BigQuery will achieve higher utilization, faster query response, and easier scaling</p>
     </section>
 
