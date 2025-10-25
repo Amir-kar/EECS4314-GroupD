@@ -91,22 +91,26 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: auto;
     border-radius: 6px;
     background: linear-gradient(180deg, #eef4ff, #ffffff);
     color: var(--muted);
     border: 1px dashed #d8e2ff;
-    margin: 10px 0
+    margin: 10px 0;
+    padding: 10px;
+    overflow: hidden;     
+    max-width: 100%;     
 }
 
-img {
-    display: block;
+.image-placeholder img {
     max-width: 100%;
+    max-height: 400px;    
     height: auto;
-    margin: 20px auto;
-    border-radius: 6px;
-    box-shadow: 0 4px 10px rgba(12, 20, 40, 0.08);
+    width: auto;
+    object-fit: contain;  
+    display: block;
+    border-radius: 4px;
 }
+
 
 
 table {
