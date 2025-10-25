@@ -246,31 +246,41 @@
     </section>
     
 
-    <section id="usecase">
-      <h2>Yarn Use-Case: MapReduce Job on YARN</h2>
-      <p>If space allows, include sequence diagrams showing client &rarr; RM &rarr; AM &rarr; NM and lifecycle of Map and Reduce tasks inside containers.</p>
-    </section>
+    
 
     <section id="derivation">
       <h2>Derivation Process &amp; Alternatives</h2>
-      <p>We gathered information from Hadoop official documentation, GeekforGeeks, and DataCamp. Alternatives considered included Google BigQuery (Borg) and Snowflake.</p>
+      <p>Our approach involved gathering information from multiple sources, including Hadoop official documentation and online resources such as GeekforGeeks and DataCamp.
+      </p>
+      <br>
+      <p>Using this information, we delivered a high level conceptual architecture diagram of Hadoop, providing a clear overview of its layers and core components. We also conduct an in-depth exploration of YARN, highlighting dependencies between its components through its conceptual architecture diagram. We also delivered a sequence diagram to show the flows between components interactions in YARN.
+      </p>
+      <br>
+      <p>An alternative is Google BigQuery with Borg (resource and job manager). Hadoop and BigQuery have different purposes (Hadoop is a framework for distributed storage and processing of large datasets while Google BigQuery is a serverless managed data warehouse). However, if one’s goal is fast, scalable, SQL-based analytics on large structured data, without managing infrastructure, BigQuery will achieve higher utilization, faster query response, and easier scaling</p>
     </section>
 
     <section id="lessons">
       <h2>Lessons learned</h2>
-      <p>YARN and Hadoop combine multiple architectural styles to achieve robustness, scalability, and fault tolerance. Single masters (NameNode, ResourceManager) are potential bottlenecks but can be mitigated using standby masters or federation.</p>
+      <p>We came to an understanding of how Hadoop architecture provides robustness, scalability, clear responsibilities, fault tolerance and concurrency by combining multiple architectural styles: distributed layers, master slave, client server and pipe & filter. We can see that there are some possible trade-offs such as centralization bottlenecks in NameNode and ResourceManager. However, this can be mitigated by the use of secondary or standby NameNode and ResourceManager. Not only that but YARN federation can also be implemented to distribute scheduling better and reduce data traffic across the cluster, ensuring the system remains efficient and resilient.</p>  
     </section>
 
     <section id="references">
       <h2>References</h2>
       <ol class="references">
-        <li><a href="https://hadoop.apache.org/" target="_blank" rel="noopener">https://hadoop.apache.org/</a></li>
-        <li><a href="https://www.geeksforgeeks.org/data-engineering/hadoop-daemons-and-their-features/" target="_blank" rel="noopener">GeeksforGeeks: Hadoop daemons and their features</a></li>
-        <li><a href="https://hadoop.apache.org/docs/r3.3.1/hadoop-yarn/hadoop-yarn-site/WebApplicationProxy.html" target="_blank" rel="noopener">Hadoop WebApplicationProxy docs</a></li>
-        <li><a href="https://www.datacamp.com/blog/hadoop-architecture" target="_blank" rel="noopener">DataCamp: Hadoop architecture</a></li>
-        <li><a href="https://www.geeksforgeeks.org/data-engineering/hadoop-architecture/" target="_blank" rel="noopener">GeeksforGeeks: Hadoop architecture</a></li>
-        <li><a href="https://www.geeksforgeeks.org/big-data/hadoop-yarn-architecture/" target="_blank" rel="noopener">GeeksforGeeks: YARN architecture</a></li>
+        <li><a href="https://hadoop.apache.org/" target="_blank" rel="noopener">Apache Hadoop (Apache Software Foundation, 2019)</a></li>
+        <li><a href="https://www.geeksforgeeks.org/data-engineering/hadoop-daemons-and-their-features/" target="_blank" rel="noopener">GeeksforGeeks: Hadoop daemons and their features (2020)</a></li>
+        <li><a href="https://hadoop.apache.org/docs/r3.3.1/hadoop-yarn/hadoop-yarn-site/WebApplicationProxy.html" target="_blank" rel="noopener">Apache Hadoop 3.3.1 – Web Application Proxy (2021)</a></li>
+        <li><a href="https://www.datacamp.com/blog/hadoop-architecture" target="_blank" rel="noopener">DataCamp: Hadoop architecture explained (Brooks, 2025)</a></li>
+        <li><a href="https://www.geeksforgeeks.org/data-engineering/hadoop-architecture/" target="_blank" rel="noopener">GeeksforGeeks: Hadoop architecture (2020)</a></li>
+        <li><a href="https://www.geeksforgeeks.org/big-data/hadoop-yarn-architecture/" target="_blank" rel="noopener">GeeksforGeeks: Hadoop YARN architecture (2018)</a></li>
+        <li><a href="https://medium.com/@DataWithSantosh/bigquery-architecture-a-brief-explanation-557e6c451994" target="_blank" rel="noopener">Medium (DataWithSantosh): BigQuery architecture explanation (2024)</a></li>
+        <li><a href="https://apache.github.io/hadoop/hadoop-yarn/hadoop-yarn-site/YARN.html" target="_blank" rel="noopener">Apache Hadoop 3.5.0-SNAPSHOT – YARN documentation (2025)</a></li>
+        <li><a href="https://hadoop.apache.org/docs/r1.0.4/mapred_tutorial.html" target="_blank" rel="noopener">Apache: MapReduce tutorial (2025)</a></li>
+        <li><a href="https://hadoop.apache.org/docs/r3.3.1/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" target="_blank" rel="noopener">Apache Hadoop 3.3.1 – HDFS architecture</a></li>
+        <li><a href="https://hadoop.apache.org/docs/r3.0.1/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html" target="_blank" rel="noopener">Apache Hadoop 3.0.1 – MapReduce tutorial (2018)</a></li>
+        <li><a href="https://doi.org/10.1016/j.dcan.2017.07.008" target="_blank" rel="noopener">Usama, Liu & Chen (2017): Job schedulers for Big Data processing in Hadoop environment</a></li>
       </ol>
+
     </section>
 
     <footer>
