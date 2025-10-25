@@ -68,7 +68,7 @@
         <li><strong>HDFS(Hadoop’s Distributed File Storage):</strong> This is Hadoop’s file storage system [10]. It breaks large data into blocks and stores as well as replicates the blocks across multiple nodes. HDFS is at the 3rd layer (storage layer) and it depends only on the bottom layer.</li>
         <li><strong>Hadoop Common:</strong> This is Hadoop common core that provides libraries, services and utilities to support the upper layer Hadoop modules [4]. The Common is at the bottom layer (foundation layer).</li>
       </ul>
-      <img src="HadoopConceptualArchitecture.png" alt="Hadoop Conceptual Architecture">
+      <div class="image-placeholder"><img src="HadoopConceptualArchitecture.png" alt="Hadoop Conceptual Architecture"></div>
       <h3>Interactions</h3>
       <ul>
         <li>The Common <-> HDFS, YARN, MapReduce: Common provides libraries, services, utilities that HDFS, YARN and MapReduce import and use.</li>
@@ -127,7 +127,7 @@
         <li><strong>Container:</strong> There are multiple Containers in a node, each runs a task. A container is a resource bundle (CPU, Memory) where a task runs.
 </li>
       </ul>
-      <img src="yarnOverview.png" alt="Yarn Conceptual Architecture">
+      <div class="image-placeholder"><img src="yarnOverview.png" alt="Yarn Conceptual Architecture"></div>
     </section>
 
     <h3>Interactions</h3>
@@ -154,7 +154,7 @@
     </ul>
     <section id="workflow">
       <h2>High-Level YARN Workflow</h2>
-      <img src="YarnWorkFlow.png" alt="Yarn Workflow">
+      <div class="image-placeholder"><img src="YarnWorkFlow.png" alt="Yarn Workflow"></div>
       <h3>Workflow</h3>
       <ol>
         <li>Client submits a job to Resource Manager.</li>
@@ -184,7 +184,7 @@
       <p>The scheduler allocates resources to the various running applications based on the resource requirement of the application. This is also based on the resource Container that has elements such as memory, cpu, disk, network etc. The State Store is a pluggable storage that will save application metadata and also the completion state of the application, since ResourceManager is YARN’s orchestrator it is potentially a single point of failure and State Store is there to store information while ResourceManager restarts. The Web Application Proxy is a proxy intended to reduce web based malicious attacks through YARN, ApplicationMaster has the responsibility to provide a web UI and to send that link to ResourceManager, the proxy will warn users of potentially malicious links and avoid risk [3].
       </p>
       
-      <img src="ResourceManager.png" alt="ResourceManager">
+      <div class="image-placeholder"><img src="ResourceManager.png" alt="ResourceManager"></div>
     </section>
 
     <section id="am">
@@ -194,7 +194,7 @@
       <p>Within the AM there are two protocols which are used for communication. The AMRMClientAsync is used to communicate with the RM when submitting requests for resource allocations and status updates about the AMs app. The AMNMClientAsync is used to communicate with the NMs when sending start/stop and other container requests.  Note that both of the protocols used by the AM contain async within their names, this means that both the RM and NMs send callback messages to the AM.</p>
       <br>
       <p>Many AMs also expose a WebUI per-application. This WebUI is tunneled to the RM, and clients are then able to view per-app status’, metrics, and configs when accessing the RM’s WebUI Proxy.</p>
-      <img src="AM.png" alt="ApplicationMaster">
+      <div class="image-placeholder"><img src="AM.png" alt="ApplicationMaster"></div>
       
     </section>
 
