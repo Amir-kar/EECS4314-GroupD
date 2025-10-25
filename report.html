@@ -118,19 +118,43 @@
 
     <section id="yarn-overview">
       <h2>Yarn Overview</h2>
-      <p>YARN is responsible for resource management and job scheduling in Hadoop. Key components:</p>
+      <p>YARN (Yet Another Resource Negotiator) is the component responsible for resource management and jobs scheduling in Hadoop. There are 4 key components in YARN: Resource Manager, Application Master, Node Manager and Container.</p>
       <ul>
-        <li><strong>Resource Manager (RM):</strong> Global master daemon that allocates resources and schedules jobs.</li>
-        <li><strong>Application Master (AM):</strong> One per application; manages application lifecycle and requests containers.</li>
-        <li><strong>Node Manager (NM):</strong> One per node; launches and monitors containers.</li>
-        <li><strong>Container:</strong> Resource bundle (CPU, memory) where tasks run.</li>
+        <li><strong>Resource Manager (RM):</strong> There is only 1 Resource Manager in YARN. It is the master daemon for allocating resources and scheduling jobs. The RM schedules and allocates containers.
+</li>
+        <li><strong>Application Master (AM):</strong> There is 1 Application Master per application. It is responsible for managing the full life cycle of its application.The AM requests for containers, and orchestrates the NM to launch and stop</li>
+        <li><strong>Node Manager (NM):</strong> There is 1 Node Manager per node and an application is typically within containers located in multiple nodes. The NM is responsible for managing its node and the containers within itself</li>
+        <li><strong>Container:</strong> There are multiple Containers in a node, each runs a task. A container is a resource bundle (CPU, Memory) where a task runs.
+</li>
       </ul>
-      <div class="image-placeholder">[Diagram: YARN component overview]</div>
+      <img src="YarnOverview.png" alt="Yarn Conceptual Architecture">
     </section>
 
+    <h3>Interactions</h3>
+    <ul>
+      <li>Client -> RM: Client submits a ‘job’ to the RM. A ‘job’ is typically an instruction on what to run and the desired resources needed.
+      </li>
+      <li>AM <-> RM: AM requests and obtains containers’ information from RM; RM returns an allocation of resources along with a list of NM’s. 
+      </li>
+      <li>AM <-> NM: AM uses the allocations from the RM and orchestrates the NM’s to launch and monitor the allocated containers</li>
+      <li>NM <->Container: NM launches the process in a local container and monitors it.
+      </li>
+      <li>NM <-> RM: NM registers itself with the RM, periodically sending heartbeats and status updates of its containers.
+      </li>
+    </ul>
+    <h3>Dependencies</h3>
+    <ul>
+      <li>AM depends on RM for allocating an initial AM container for itself and for additional container allocations for the app’s tasks.
+      </li>
+      <li>AM depends on the NM to launch, monitor and stop allocated containers.</li>
+      <li>NM depends on RM for cluster membership(registration).
+      </li>
+      <li>Containers depend on NM for resource limits, status updates, and start/stop rules.
+      </li>
+    </ul>
     <section id="workflow">
       <h2>High-Level YARN Workflow</h2>
-      <div class="image-placeholder">[Sequence diagram: client &rarr; RM &rarr; AM &rarr; NM]</div>
+      <img src="YarnWorkFlow.png" alt="Yarn Workflow">
       <ol>
         <li>Client submits a job to Resource Manager.</li>
         <li>Resource Manager allocates a container for the Application Master.</li>
@@ -220,7 +244,6 @@
 
     <footer>
       <div>Group D — Assignment 1. Generated on October 14, 2025.</div>
-      <div class="edit-hint" style="margin-top:6px;color:var(--muted)">Tip: Replace <code>[Diagram: ...]</code> placeholders with your SVG/PNG diagrams (use inline SVG for best quality). To print/export to PDF: use your browser's Print &rarr; Save as PDF.</div>
     </footer>
   </div>
 </body>
