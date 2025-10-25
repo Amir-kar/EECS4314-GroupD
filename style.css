@@ -91,7 +91,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 220px;
+    height: auto;
     border-radius: 6px;
     background: linear-gradient(180deg, #eef4ff, #ffffff);
     color: var(--muted);
