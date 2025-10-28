@@ -1552,9 +1552,6 @@
         <mxCell id="S45ctITLy9P17H1aVyig-78" value="&lt;font&gt;Scheduler&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
           <mxGeometry x="6340" y="860" width="70" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="S45ctITLy9P17H1aVyig-79" value="&lt;font&gt;Reservation&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
-          <mxGeometry x="6430" y="851.87" width="70" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="S45ctITLy9P17H1aVyig-80" value="&lt;font&gt;WebApp&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
           <mxGeometry x="6400" y="905.6199999999999" width="70" height="30" as="geometry" />
         </mxCell>
