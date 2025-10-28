@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36" version="28.2.7">
   <diagram name="Page-1" id="G8NYhc_L8yMbjAHVzwG-">
-    <mxGraphModel dx="1251" dy="684" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1472" dy="805" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1471,9 +1471,6 @@
         <mxCell id="S45ctITLy9P17H1aVyig-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="6310" y="819.37" width="220" height="128.75" as="geometry" />
         </mxCell>
-        <mxCell id="S45ctITLy9P17H1aVyig-7" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;Client (YarnClient Object)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="6510" y="520" width="180" height="90" as="geometry" />
-        </mxCell>
         <mxCell id="S45ctITLy9P17H1aVyig-18" value="" style="line;strokeWidth=2;html=1;" vertex="1" parent="1">
           <mxGeometry x="6301" y="1340" width="520" height="10" as="geometry" />
         </mxCell>
@@ -1511,34 +1508,31 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="S45ctITLy9P17H1aVyig-30" value="&lt;font&gt;State Store&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
-          <mxGeometry x="6890" y="577.5" width="90" height="30" as="geometry" />
+          <mxGeometry x="7170" y="680" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="S45ctITLy9P17H1aVyig-33" value="Client Layer" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="6680" y="1105" width="90" height="30" as="geometry" />
         </mxCell>
         <mxCell id="S45ctITLy9P17H1aVyig-35" value="&lt;font&gt;WebUI&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
-          <mxGeometry x="7091" y="915" width="110" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="S45ctITLy9P17H1aVyig-36" value="AM" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="6390" y="593.75" width="60" height="30" as="geometry" />
+          <mxGeometry x="7175" y="885" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="S45ctITLy9P17H1aVyig-42" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;Timeline Server&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
-          <mxGeometry x="7190" y="984.9999999999999" width="140" height="48.75" as="geometry" />
+          <mxGeometry x="7175" y="981.2499999999999" width="140" height="48.75" as="geometry" />
         </mxCell>
         <mxCell id="S45ctITLy9P17H1aVyig-48" value="&lt;font&gt;AMRMClientAsync Object&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;" vertex="1" parent="1">
-          <mxGeometry x="7060" y="838.75" width="100" height="32.5" as="geometry" />
+          <mxGeometry x="7175" y="830" width="100" height="32.5" as="geometry" />
         </mxCell>
         <mxCell id="S45ctITLy9P17H1aVyig-49" value="&lt;font&gt;NMClientAsync Object&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;" vertex="1" parent="1">
-          <mxGeometry x="7000" y="990" width="91" height="30" as="geometry" />
+          <mxGeometry x="7175" y="935.62" width="91" height="30" as="geometry" />
         </mxCell>
         <mxCell id="S45ctITLy9P17H1aVyig-52" value="RM" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="6310" y="823.12" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="S45ctITLy9P17H1aVyig-53" value="&lt;font&gt;HeartBeat/status Service&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;" vertex="1" parent="1">
-          <mxGeometry x="6080" y="810" width="100" height="30" as="geometry" />
+          <mxGeometry x="7175" y="779.37" width="100" height="30" as="geometry" />
         </mxCell>
         <mxCell id="S45ctITLy9P17H1aVyig-73" value="YARN CSI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" vertex="1" parent="1">
-          <mxGeometry x="6990" y="690" width="80" height="33.75" as="geometry" />
+          <mxGeometry x="7175" y="730" width="80" height="33.75" as="geometry" />
         </mxCell>
         <mxCell id="S45ctITLy9P17H1aVyig-75" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="6706" y="1214.5" width="120" height="42.5" as="geometry" />
