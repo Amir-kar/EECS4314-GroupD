@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.8">
   <diagram name="Page-1" id="MzGk4BcChYRworbhnkPF">
-    <mxGraphModel dx="1991" dy="614" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2038" dy="639" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -181,41 +181,31 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-11" value="Core utlities that support all other core modules." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
-          <mxGeometry x="527.5" y="900" width="100" height="50" as="geometry" />
+        <mxCell id="zDYgsklpXwiU50oVNI-N-11" value="The Common depends on Yarn&#39;s TimelineService!&amp;nbsp;&lt;div&gt;Maybe to get details?&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="562.5" y="900" width="110" height="75" as="geometry" />
         </mxCell>
         <mxCell id="zDYgsklpXwiU50oVNI-N-12" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="zDYgsklpXwiU50oVNI-N-11">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="497.5" y="930" as="sourcePoint" />
+            <mxPoint x="530" y="980" as="sourcePoint" />
             <mxPoint x="537.5" y="900" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-13" value="Resource Manager &amp;amp; Job Scheduler.&lt;div&gt;&lt;font&gt;The central platform for managing compute resources across the cluster&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
-          <mxGeometry x="632.5" y="960" width="110" height="90" as="geometry" />
+        <mxCell id="zDYgsklpXwiU50oVNI-N-13" value="No real dependency on MapReduce by YARN!" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="570" y="1110" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-14" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="zDYgsklpXwiU50oVNI-N-3" target="zDYgsklpXwiU50oVNI-N-13">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-14" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="zDYgsklpXwiU50oVNI-N-13">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="627.5" y="1050" as="sourcePoint" />
+            <mxPoint x="530" y="1100" as="sourcePoint" />
             <mxPoint x="667.5" y="1020" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-15" value="Distributed filesystem &lt;font&gt;&lt;font style=&quot;&quot;&gt;U&lt;/font&gt;&lt;font style=&quot;&quot;&gt;tilizes a master-slave model. Data split into blocks and replicated.&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
-          <mxGeometry x="137.5" y="915" width="110" height="90" as="geometry" />
+        <mxCell id="zDYgsklpXwiU50oVNI-N-15" value="The Common depends on HDFS&#39; unistd.h which defines a sleep function not included in Windows." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="870" width="132.5" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-16" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="zDYgsklpXwiU50oVNI-N-2" target="zDYgsklpXwiU50oVNI-N-15">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-16" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="zDYgsklpXwiU50oVNI-N-15">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="167.5" y="1110" as="sourcePoint" />
+            <mxPoint x="340" y="980" as="sourcePoint" />
             <mxPoint x="217.5" y="1060" as="targetPoint" />
-            <Array as="points" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-17" value="Two-Phase data processor&lt;div&gt;&lt;font&gt;Data is processed in parallel across the cluster. Within containers.&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
-          <mxGeometry x="557.5" y="1090" width="115" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-18" value="" style="endArrow=none;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="zDYgsklpXwiU50oVNI-N-17" target="zDYgsklpXwiU50oVNI-N-4">
-          <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="587.5" y="1230" as="sourcePoint" />
-            <mxPoint x="567.5" y="1210" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
         </mxCell>
@@ -277,6 +267,15 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="460" y="1070" as="sourcePoint" />
             <mxPoint x="400" y="1020" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zDYgsklpXwiU50oVNI-N-31" value="Yarn does depend on HDFS for secret tokens of some kind" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+          <mxGeometry x="660" y="1015" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="zDYgsklpXwiU50oVNI-N-32" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="zDYgsklpXwiU50oVNI-N-31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="1040" as="sourcePoint" />
+            <mxPoint x="670" y="1085" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
