@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.8">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.9">
   <diagram name="Page-1" id="MzGk4BcChYRworbhnkPF">
-    <mxGraphModel dx="2038" dy="639" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1676" dy="451" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -143,136 +143,136 @@
         <mxCell id="AhfG7yE6Urii9o7t-FWB-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="800" y="40" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;The Common&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-1" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;The Common&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="377.5" y="930" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-2" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;HDFS&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-2" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;HDFS&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="257.5" y="1010" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-3" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;YARN&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-3" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;YARN&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="497.5" y="1010" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-4" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Map Reduce&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-4" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Map Reduce&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="377.5" y="1090" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-5" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="zDYgsklpXwiU50oVNI-N-4" target="zDYgsklpXwiU50oVNI-N-1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-5" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="zDYgsklpXwiU50oVNI-N-4" target="zDYgsklpXwiU50oVNI-N-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="407.5" y="1130" as="sourcePoint" />
             <mxPoint x="457.5" y="1080" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-6" value="" style="line;strokeWidth=2;html=1;" vertex="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-6" value="" style="line;strokeWidth=2;html=1;" parent="1" vertex="1">
           <mxGeometry x="217.5" y="1190" width="460" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-7" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Legend:&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-7" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Legend:&lt;/font&gt;" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" parent="1" vertex="1">
           <mxGeometry x="217.5" y="1190" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-8" value="Subsystem" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-8" value="Subsystem" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="312.5" y="1200" width="85" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-9" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-9" value="" style="endArrow=classic;html=1;rounded=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="417.5" y="1220" as="sourcePoint" />
             <mxPoint x="657.5" y="1220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-10" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Depends On&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="zDYgsklpXwiU50oVNI-N-9">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-10" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Depends On&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="zDYgsklpXwiU50oVNI-N-9" vertex="1" connectable="0">
           <mxGeometry x="-0.0148" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-11" value="The Common depends on Yarn&#39;s TimelineService!&amp;nbsp;&lt;div&gt;Maybe to get details?&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-11" value="The Common depends on Yarn&#39;s TimelineService!&amp;nbsp;&lt;div&gt;Maybe to get details?&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" parent="1" vertex="1">
           <mxGeometry x="562.5" y="900" width="110" height="75" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-12" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="zDYgsklpXwiU50oVNI-N-11">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-12" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="zDYgsklpXwiU50oVNI-N-11" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="530" y="980" as="sourcePoint" />
             <mxPoint x="537.5" y="900" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-13" value="No real dependency on MapReduce by YARN!" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-13" value="No real dependency on MapReduce by YARN!" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" parent="1" vertex="1">
           <mxGeometry x="570" y="1110" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-14" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="zDYgsklpXwiU50oVNI-N-13">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-14" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="zDYgsklpXwiU50oVNI-N-13" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="530" y="1100" as="sourcePoint" />
             <mxPoint x="667.5" y="1020" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-15" value="The Common depends on HDFS&#39; unistd.h which defines a sleep function not included in Windows." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-15" value="The Common depends on HDFS&#39; unistd.h which defines a sleep function not included in Windows." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" parent="1" vertex="1">
           <mxGeometry x="217.5" y="870" width="132.5" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-16" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="zDYgsklpXwiU50oVNI-N-15">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-16" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="zDYgsklpXwiU50oVNI-N-15" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="340" y="980" as="sourcePoint" />
             <mxPoint x="217.5" y="1060" as="targetPoint" />
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-19" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="zDYgsklpXwiU50oVNI-N-4" target="zDYgsklpXwiU50oVNI-N-2">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-19" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="zDYgsklpXwiU50oVNI-N-4" target="zDYgsklpXwiU50oVNI-N-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="277.5" y="1190" as="sourcePoint" />
             <mxPoint x="327.5" y="1140" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-20" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="zDYgsklpXwiU50oVNI-N-4" target="zDYgsklpXwiU50oVNI-N-3">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-20" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="zDYgsklpXwiU50oVNI-N-4" target="zDYgsklpXwiU50oVNI-N-3" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="617.5" y="1230" as="sourcePoint" />
             <mxPoint x="517.5" y="1150" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-21" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="zDYgsklpXwiU50oVNI-N-2" target="zDYgsklpXwiU50oVNI-N-1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-21" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" parent="1" source="zDYgsklpXwiU50oVNI-N-2" target="zDYgsklpXwiU50oVNI-N-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="407.5" y="1070" as="sourcePoint" />
             <mxPoint x="307.5" y="990" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="zDYgsklpXwiU50oVNI-N-3" target="zDYgsklpXwiU50oVNI-N-1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=none;startFill=0;" parent="1" source="zDYgsklpXwiU50oVNI-N-3" target="zDYgsklpXwiU50oVNI-N-1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="637.5" y="1060" as="sourcePoint" />
             <mxPoint x="537.5" y="980" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="277.36" y="1150" as="targetPoint" />
             <mxPoint x="277.36" y="1100" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-24" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;JVM&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-24" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;JVM&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="237.5" y="1150" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.58;exitY=-0.008;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.58;exitY=-0.008;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="297.5000000000001" y="1150" as="targetPoint" />
             <mxPoint x="297.9" y="1100.48" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="237.5" y="1150" as="targetPoint" />
             <mxPoint x="237.5" y="1100" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="257.36" y="1150" as="targetPoint" />
             <mxPoint x="257.36" y="1100" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-28" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Things found&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;br&gt;&lt;/h1&gt;&lt;div&gt;MapReduce and YARN!&lt;/div&gt;&lt;div&gt;- Understand is deluding itself, Yarn does not depend on Mapreduce&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- This delusion is under getConfig, under FiControl&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Common dependencies on MapReduce! The common does not actuall depend on MapReduce&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- this delusion is under valueOf, the Common does not depend on MapReduce&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Common dependencies on HDFS&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Understand says 8 come from a unistd.h which jsut seems to define sleep on windows?&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 1 comes from valueOF in TestEncryptionZones.java&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Common dependencies on YARN&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- supposedly 25&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- it is on the YARN Hadoop timeline service&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- specifically the offlineAggregationInfo.java -&amp;gt; Clone&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- I guess this is legit&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Maybe to get details about what the TimelineSerrvice has been doing?&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;YARN dependencies on HDFS&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 9 on DFSConfigKeys.java&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Legitimate&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 2 on DelegationTokenSecretManager.java&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- legitimate&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;HDFS dependencies on MapReduce&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- None&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Common dependencies on MapReduce&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;-&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-28" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Things found&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;br&gt;&lt;/h1&gt;&lt;div&gt;MapReduce and YARN!&lt;/div&gt;&lt;div&gt;- Understand is deluding itself, Yarn does not depend on Mapreduce&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- This delusion is under getConfig, under FiControl&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Common dependencies on MapReduce! The common does not actuall depend on MapReduce&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- this delusion is under valueOf, the Common does not depend on MapReduce&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Common dependencies on HDFS&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Understand says 8 come from a unistd.h which jsut seems to define sleep on windows?&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 1 comes from valueOF in TestEncryptionZones.java&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Common dependencies on YARN&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- supposedly 25&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- it is on the YARN Hadoop timeline service&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- specifically the offlineAggregationInfo.java -&amp;gt; Clone&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- I guess this is legit&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Maybe to get details about what the TimelineSerrvice has been doing?&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;YARN dependencies on HDFS&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 9 on DFSConfigKeys.java&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- Legitimate&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- 2 on DelegationTokenSecretManager.java&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- legitimate&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;HDFS dependencies on MapReduce&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;- None&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Common dependencies on MapReduce&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;-&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="190" y="1250" width="430" height="640" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-29" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="zDYgsklpXwiU50oVNI-N-3" target="zDYgsklpXwiU50oVNI-N-2">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-29" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="zDYgsklpXwiU50oVNI-N-3" target="zDYgsklpXwiU50oVNI-N-2" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="460" y="1070" as="sourcePoint" />
             <mxPoint x="400" y="1020" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-31" value="Yarn does depend on HDFS for secret tokens of some kind" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" vertex="1" parent="1">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-31" value="Yarn does depend on HDFS for secret tokens of some kind" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e3c800;fontColor=#000000;strokeColor=#B09500;" parent="1" vertex="1">
           <mxGeometry x="660" y="1015" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="zDYgsklpXwiU50oVNI-N-32" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="zDYgsklpXwiU50oVNI-N-31">
+        <mxCell id="zDYgsklpXwiU50oVNI-N-32" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="zDYgsklpXwiU50oVNI-N-31" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="630" y="1040" as="sourcePoint" />
             <mxPoint x="670" y="1085" as="targetPoint" />
